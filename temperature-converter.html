@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .converter {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        min-width: 320px;
+      }
+      .converter h2 {
+        margin-bottom: 1rem;
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      input[type="number"] {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      select {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      button {
+        width: 100%;
+        padding: 0.7rem;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      .result {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        color: #333;
+        min-height: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="converter">
+      <h2>Temperature Converter</h2>
+      <div class="form-group">
+        <label for="tempInput">Enter Temperature:</label>
+        <input type="number" id="tempInput" placeholder="e.g. 32" />
+      </div>
+      <div class="form-group">
+        <label for="unitFrom">From:</label>
+        <select id="unitFrom">
+          <option value="C">Celsius (°C)</option>
+          <option value="F">Fahrenheit (°F)</option>
+          <option value="K">Kelvin (K)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="unitTo">To:</label>
+        <select id="unitTo">
+          <option value="C">Celsius (°C)</option>
+          <option value="F">Fahrenheit (°F)</option>
+          <option value="K">Kelvin (K)</option>
+        </select>
+      </div>
+      <button id="convertBtn">Convert</button>
+      <div class="result" id="result"></div>
+    </div>
+    <script>
+      function convertTemperature(value, from, to) {
+        let temp = parseFloat(value);
+        if (isNaN(temp)) return null;
+        // Convert input to Celsius first
+        let celsius;
+        if (from === "C") {
+          celsius = temp;
+        } else if (from === "F") {
+          celsius = ((temp - 32) * 5) / 9;
+        } else if (from === "K") {
+          celsius = temp - 273.15;
+        }
+        // Convert from Celsius to target unit
+        if (to === "C") {
+          return { value: celsius, unit: "°C" };
+        } else if (to === "F") {
+          return { value: (celsius * 9) / 5 + 32, unit: "°F" };
+        } else if (to === "K") {
+          return { value: celsius + 273.15, unit: "K" };
+        }
+      }
+      document
+        .getElementById("convertBtn")
+        .addEventListener("click", function () {
+          const tempInput = document.getElementById("tempInput").value;
+          const unitFrom = document.getElementById("unitFrom").value;
+          const unitTo = document.getElementById("unitTo").value;
+          const resultDiv = document.getElementById("result");
+          if (tempInput === "") {
+            resultDiv.textContent = "Please enter a temperature value.";
+            return;
+          }
+          if (unitFrom === unitTo) {
+            resultDiv.textContent = `No conversion needed. Value: ${tempInput} ${
+              unitFrom === "C" ? "°C" : unitFrom === "F" ? "°F" : "K"
+            }`;
+            return;
+          }
+          const result = convertTemperature(tempInput, unitFrom, unitTo);
+          if (result === null) {
+            resultDiv.textContent =
+              "Invalid input. Please enter a valid number.";
+          } else {
+            resultDiv.textContent = `Converted: ${result.value.toFixed(2)} ${
+              result.unit
+            }`;
+          }
+        });
+    </script>
+  </body>
+</html>
