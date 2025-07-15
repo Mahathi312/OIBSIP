@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #f8ffae 0%, #43c6ac 100%);
+  color: #222;
+}
+.header {
+  background: linear-gradient(120deg, #ff6a00 0%, #ee0979 100%);
+  color: #fff;
+  padding-bottom: 3rem;
+  box-shadow: 0 4px 24px rgba(238, 9, 121, 0.15);
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+nav a:hover {
+  color: #43c6ac;
+  text-shadow: 0 0 8px #fff;
+}
+.hero {
+  text-align: center;
+  margin-top: 5rem;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #e4dee1;
+  text-shadow: 0 2px 12px #fff6;
+}
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #ebe7e5;
+}
+.btn {
+  background: linear-gradient(90deg, #43c6ac 0%, #ee0979 100%);
+  color:white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #ee097955;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.btn:hover {
+  background: linear-gradient(90deg, #ee0979 0%, #43c6ac 100%);
+  box-shadow: 0 4px 16px #ee097999;
+}
+.about,
+.skills,
+.projects,
+.contact {
+  background: linear-gradient(120deg, #fff1eb 0%, #ace0f9 100%);
+  margin: 2rem auto;
+  padding: 3rem 2rem;
+  max-width: 900px;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(67, 198, 172, 0.1);
+}
+.about h2,
+.skills h2,
+.projects h2,
+.contact h2 {
+  color: #ff6a00;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 8px #fff6;
+}
+.skills ul {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+.skills li {
+  background: linear-gradient(90deg, #43c6ac 0%, #ace0f9 100%);
+  color: #222;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px #43c6ac22;
+}
+.project-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.project {
+  background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 250px;
+  box-shadow: 0 2px 16px #ee097955;
+  margin-bottom: 1rem;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto 2rem auto;
+}
+.contact input,
+.contact textarea {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #43c6ac;
+  font-size: 1rem;
+  background: #f8ffae;
+}
+.contact button {
+  background: linear-gradient(90deg, #43c6ac 0%, #ee0979 100%);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #43c6ac55;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.contact button:hover {
+  background: linear-gradient(90deg, #ee0979 0%, #43c6ac 100%);
+  box-shadow: 0 4px 16px #ee097999;
+}
+.contact-info {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+footer {
+  background: linear-gradient(90deg, #43c6ac 0%, #ee0979 100%);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
